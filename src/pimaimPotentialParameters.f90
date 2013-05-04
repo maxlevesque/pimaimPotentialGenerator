@@ -150,7 +150,9 @@ module pimaimPotentialParameters
             FT(Zr,Zr)%C8    = 750.00d0
             FT(Zr,Zr)%F6    = 1.900d0 
             FT(Zr,Zr)%F8    = 1.900d0 
-            polarizability(Zr) = 2.926d0 
+            polarizability(Zr) = 2.926d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            
+            polarizability(Li) = 0.0d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             
             FT(Zr,Na)%source = "actual work on transmutations Salanne et al., J. Fluo. Chem. 130, 38-44 (2009)"
             FT(Zr,Na)%alpha = 5.00d0 
@@ -174,7 +176,13 @@ module pimaimPotentialParameters
             FT(Na,Na)%C8    = 51.80d0
             FT(Na,Na)%F6    = 1.900d0
             FT(Na,Na)%F8    = 1.900d0
-            polarizability(Na) = 1.028d0 
+            polarizability(Na) = 1.028d0  ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            
+            polarizability(K) = 5.0d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability(Rb) = 8.4d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability(Cs) = 14.8d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability(Ca) = 3.1d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability(Sr) = 5.1d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             
             FT(Na,K)%source = "Salanne et al., J. Fluo. Chem. 130, 38-44 (2009) (error in paper, corrected here)"
             FT(Na,K)%alpha = 5.0d0 
@@ -264,6 +272,38 @@ module pimaimPotentialParameters
             dip(Y,Li)%order  = 4
             dip(Y,Li)%dampingc  = 0.001d0 
             
+            FT(Y,Zr)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(Y,Zr)%alpha  = 5.0d0
+            FT(Y,Zr)%B      = 1.0d0
+            FT(Y,Zr)%C6    = 0.01d0 
+            FT(Y,Zr)%C8    = 0.1d0  
+            FT(Y,Zr)%F6    = 1.900d0
+            FT(Y,Zr)%F8    = 1.900d0
+            dip(Y,Zr)%source = "TODO ASK CONFIRMATION FOR MATHIEU"
+            dip(Y,Zr)%dampingb = 10.00d0 
+            dip(Y,Zr)%order  = 4
+            dip(Y,Zr)%dampingc  = 0.001d0 
+            dip(Zr,Y)%source = "TODO ASK CONFIRMATION FOR MATHIEU"
+            dip(Zr,Y)%dampingb = 10.00d0 
+            dip(Zr,Y)%order  = 4
+            dip(Zr,Y)%dampingc  = 0.001d0 
+            
+            FT(Y,Na)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(Y,Na)%alpha  = 5.0d0
+            FT(Y,Na)%B      = 1.0d0
+            FT(Y,Na)%C6    = 0.01d0 
+            FT(Y,Na)%C8    = 0.1d0  
+            FT(Y,Na)%F6    = 1.900d0
+            FT(Y,Na)%F8    = 1.900d0
+            dip(Y,Na)%source = "TODO ASK CONFIRMATION FOR MATHIEU"
+            dip(Y,Na)%dampingb = 10.00d0 
+            dip(Y,Na)%order  = 4
+            dip(Y,Na)%dampingc  = 0.001d0 
+            dip(Na,Y)%source = "TODO ASK CONFIRMATION FOR MATHIEU"
+            dip(Na,Y)%dampingb = 10.00d0 
+            dip(Na,Y)%order  = 4
+            dip(Na,Y)%dampingc  = 0.001d0 
+            
             FT(K,K)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
             FT(K,K)%alpha = 5.0d0  
             FT(K,K)%B     = 1.0d0  
@@ -287,7 +327,7 @@ module pimaimPotentialParameters
             FT(Y,Y)%C8    = 0.001d0    
             FT(Y,Y)%F6    = 1.900d0 
             FT(Y,Y)%F8    = 1.900d0 
-            polarizability(Y) = 3.8d0
+            polarizability(Y) = 3.8d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             
             FT(La,Th)%source = "copied from Th,Y"
             FT(La,Th)%alpha = 5.0d0  
@@ -316,7 +356,7 @@ module pimaimPotentialParameters
             dip(La,Li)%order  = 4
             dip(La,Li)%dampingc  = 0.001d0 
             
-            polarizability(La) = 7.5d0
+            polarizability(La) = 7.5d0 ! Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             
             dip(Y,La)%source = "unknown"
             dip(Y,La)%dampingb = 10.00d0 
@@ -414,7 +454,7 @@ module pimaimPotentialParameters
                 FT%F6 = 0.d0
                 FT%F8 = 0.d0
                 dip%dampingb = 0.d0
-                dip%order = 0.d0
+                dip%order = 0
                 dip%dampingc = 0.d0
                 polarizability = 0.d0
         end subroutine zeroify

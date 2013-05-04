@@ -1,4 +1,4 @@
-program writepimaimpotential
+program pimaimPotentialGenerator
 
     use pimaimPotentialParameters, only: FT, dip, polarizability, initPimaimPotentialParameters=>init
     implicit none
@@ -6,14 +6,31 @@ program writepimaimpotential
     integer :: nSpecies
     integer, allocatable, dimension(:) :: listOfSpecies
     logical, allocatable, dimension(:) :: isPolarizable
-    integer :: i, j
+    integer :: i
     
     call initPimaimPotentialParameters
     call getNecessaryInformations
+    call checkAllNeededPotentialsArePresent
     call printPotentialDotInpt
     
     contains
     
+        subroutine checkAllNeededPotentialsArePresent
+            integer :: i, j, li, lj
+            do i= 1, nSpecies
+                if( .not. isPolarizable(i) ) cycle
+                li = listOfSpecies(i)
+                do j= 1, nSpecies
+                    if( j==i ) cycle
+                    lj = listOfSpecies(j)
+                    if (dip(li,lj)%order == 0) then
+                        print*,"STOP. Potential info is lacking for ",li,lj
+                        stop
+                    end if
+                end do
+            end do
+        end subroutine
+   
         subroutine getNecessaryInformations
             print*,"How many species ?"
             read(*,*) nSpecies
@@ -39,12 +56,12 @@ program writepimaimpotential
         subroutine printPotentialDotInpt
             integer :: i, j, li, lj
             open(10,file="potential.inpt")
-            write(10,*)"FT"
+            write(10,'(a)')'FT'
             do i= 1, nSpecies
                 li = listOfSpecies(i)
                 do j= i, nSpecies
                     lj = listOfSpecies(j)
-                    write(10,*) FT(li,lj)%alpha
+                    write(10,*) FT(li,lj)%alpha, li, lj
                     write(10,*) FT(li,lj)%B
                     write(10,*) FT(li,lj)%C6
                     write(10,*) FT(li,lj)%C8
@@ -61,9 +78,9 @@ program writepimaimpotential
                 do j= 1, nSpecies
                     if( j==i ) cycle
                     lj = listOfSpecies(j)
-                    write(10,*) dip(li,lj)%dampingb
-                    write(10,*) dip(li,lj)%order
-                    write(10,*) dip(li,lj)%dampingc
+                    write(10,*) dip(lj,li)%dampingb
+                    write(10,*) dip(lj,li)%order
+                    write(10,*) dip(lj,li)%dampingc
                 end do
             end do
         end subroutine
