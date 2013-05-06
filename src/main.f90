@@ -74,11 +74,11 @@ program pimaimPotentialGenerator
                 if( .not. isPolarizable(i) ) cycle
                 li = listOfSpecies(i)
                 write(10,*)
-                write(10,*) polarizability(li)
+                write(10,*) polarizability(li),'    polarizability of ',li
                 do j= 1, nSpecies
                     if( j==i ) cycle
                     lj = listOfSpecies(j)
-                    write(10,*) dip(li,lj)%dampingb
+                    write(10,*) dip(li,lj)%dampingb,'    damping of ',li,lj
                     write(10,*) dip(li,lj)%order
                     write(10,*) dip(li,lj)%dampingc
                 end do
