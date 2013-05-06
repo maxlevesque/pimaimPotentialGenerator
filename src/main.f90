@@ -56,7 +56,7 @@ program pimaimPotentialGenerator
         subroutine printPotentialDotInpt
             integer :: i, j, li, lj
             open(10,file="potential.inpt")
-            write(10,'(a)')'FT'
+            write(10,'(a)')'FT          i.e. Fumi Tosi'
             do i= 1, nSpecies
                 li = listOfSpecies(i)
                 do j= i, nSpecies
@@ -78,9 +78,9 @@ program pimaimPotentialGenerator
                 do j= 1, nSpecies
                     if( j==i ) cycle
                     lj = listOfSpecies(j)
-                    write(10,*) dip(lj,li)%dampingb
-                    write(10,*) dip(lj,li)%order
-                    write(10,*) dip(lj,li)%dampingc
+                    write(10,*) dip(li,lj)%dampingb
+                    write(10,*) dip(li,lj)%order
+                    write(10,*) dip(li,lj)%dampingc
                 end do
             end do
         end subroutine
