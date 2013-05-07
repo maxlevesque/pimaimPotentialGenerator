@@ -4,6 +4,7 @@ program pimaimPotentialGenerator
     use fumitosi, only: FT
     use polarizabilities, only: polarizability
     use dipoles, only: dip
+    use periodic_table, only: initPeriodicTable => init_periodic_table
     implicit none
 
     integer :: nSpecies
@@ -11,6 +12,7 @@ program pimaimPotentialGenerator
     logical, allocatable, dimension(:) :: isPolarizable
     integer :: i
     
+    call initPeriodicTable
     call initPotentialParameters
     call getNecessaryInformations
     call checkAllNeededPotentialsArePresent
@@ -57,6 +59,7 @@ program pimaimPotentialGenerator
         end subroutine
 
         subroutine printPotentialDotInpt
+            use periodic_table, only: ptable
             integer :: i, j, li, lj
             open(10,file="potential.inpt")
             write(10,'(a)')'FT          i.e. Fumi Tosi'
@@ -64,12 +67,12 @@ program pimaimPotentialGenerator
                 li = listOfSpecies(i)
                 do j= i, nSpecies
                     lj = listOfSpecies(j)
-                    write(10,*) FT(li,lj)%alpha, li, lj
-                    write(10,*) FT(li,lj)%B
-                    write(10,*) FT(li,lj)%C6
-                    write(10,*) FT(li,lj)%C8
-                    write(10,*) FT(li,lj)%F6
-                    write(10,*) FT(li,lj)%F8
+                    write(10,*) FT(li,lj)%alpha, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " alpha"
+                    write(10,*) FT(li,lj)%B,  ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " B"
+                    write(10,*) FT(li,lj)%C6, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " C6"
+                    write(10,*) FT(li,lj)%C8, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " C8"
+                    write(10,*) FT(li,lj)%F6, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " F6"
+                    write(10,*) FT(li,lj)%F8, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " F8"
                     write(10,*)
                 end do
             end do
@@ -77,13 +80,14 @@ program pimaimPotentialGenerator
                 if( .not. isPolarizable(i) ) cycle
                 li = listOfSpecies(i)
                 write(10,*)
-                write(10,*) polarizability(li),'    polarizability of ',li
+                write(10,*) polarizability(li),' polarizability of ',ptable(li)%symbol
                 do j= 1, nSpecies
                     if( j==i ) cycle
                     lj = listOfSpecies(j)
-                    write(10,*) dip(li,lj)%dampingb,'    damping of ',li,lj
-                    write(10,*) dip(li,lj)%order
-                    write(10,*) dip(li,lj)%dampingc
+                    write(10,*) dip(li,lj)%dampingb,' damping (b) of    ', ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2)
+                    write(10,*) dip(li,lj)%order,'                       damping order of ', &
+                                                                                ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2)
+                    write(10,*) dip(li,lj)%dampingc,' damping (c) of    ', ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2)
                 end do
             end do
         end subroutine
