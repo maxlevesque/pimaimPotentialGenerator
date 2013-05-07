@@ -1,6 +1,9 @@
 program pimaimPotentialGenerator
 
-    use pimaimPotentialParameters, only: FT, dip, polarizability, initPimaimPotentialParameters=>init
+    use potentialParameters, only: initPotentialParameters => init
+    use fumitosi, only: FT
+    use polarizabilities, only: polarizability
+    use dipoles, only: dip
     implicit none
 
     integer :: nSpecies
@@ -8,7 +11,7 @@ program pimaimPotentialGenerator
     logical, allocatable, dimension(:) :: isPolarizable
     integer :: i
     
-    call initPimaimPotentialParameters
+    call initPotentialParameters
     call getNecessaryInformations
     call checkAllNeededPotentialsArePresent
     call printPotentialDotInpt
