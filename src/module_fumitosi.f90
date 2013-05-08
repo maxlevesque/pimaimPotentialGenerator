@@ -15,6 +15,48 @@ module fumitosi
     
         subroutine init
             call zeroify
+
+            FT(Be,Be)%source = "Heaton et al., J. Phys. Chem. B 110, 11459 (2006)"
+            FT(Be,Be)%alpha  = 3.944_dp
+            FT(Be,Be)%B      = 106.16_dp
+            FT(Be,Be)%C6     = 0.0_dp 
+            FT(Be,Be)%C8     = 0.0_dp  
+            FT(Be,Be)%F6     = 1.0_dp
+            FT(Be,Be)%F8     = 1.0_dp
+
+            FT(Be,F)%source = "Heaton et al., J. Phys. Chem. B 110, 11459 (2006)"
+            FT(Be,F)%alpha  = 2.254_dp
+            FT(Be,F)%B      = 41.72_dp
+            FT(Be,F)%C6     = 0.0_dp 
+            FT(Be,F)%C8     = 0.0_dp  
+            FT(Be,F)%F6     = 1.0_dp
+            FT(Be,F)%F8     = 1.0_dp
+
+            FT(Be,Na)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(Be,Na)%alpha  = 5.0_dp
+            FT(Be,Na)%B      = 1.0_dp
+            FT(Be,Na)%C6     = 0.0_dp ! cf mail Mathieu 
+            FT(Be,Na)%C8     = 0.0_dp ! cf mail Mathieu  
+            FT(Be,Na)%F6     = 1.9_dp
+            FT(Be,Na)%F8     = 1.9_dp
+
+            FT(Be,Y)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(Be,Y)%alpha  = 5.0_dp
+            FT(Be,Y)%B      = 1.0_dp
+            FT(Be,Y)%C6     = 0.0_dp ! cf mail Mathieu
+            FT(Be,Y)%C8     = 0.0_dp ! cf mail Mathieu
+            FT(Be,Y)%F6     = 1.9_dp
+            FT(Be,Y)%F8     = 1.9_dp
+
+            FT(Be,La)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(Be,La)%alpha  = 5.0_dp
+            FT(Be,La)%B      = 1.0_dp
+            FT(Be,La)%C6     = 0.0_dp ! cf mail Mathieu
+            FT(Be,La)%C8     = 0.0_dp ! cf mail Mathieu
+            FT(Be,La)%F6     = 1.9_dp
+            FT(Be,La)%F8     = 1.9_dp
+
+
             
             FT(F,F)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
             FT(F,F)%alpha  = 2.444_dp

@@ -10,22 +10,23 @@ module polarizabilities
     contains
 
         subroutine init
-            polarizability (:) = 0.d0
+            polarizability (:) = 0._dp
 
-            polarizability(  3 ) = 0.0d0            !   Li  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability(  8 ) = 10.74d0          !   O 
-            polarizability(  9 ) = 7.885d0          !   F   src: actual work on transmutations
-            polarizability( 11 ) = 1.028d0          !   Na  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 19 ) = 5.0d0            !   K   src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 20 ) = 3.1d0            !   Ca  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 22 ) = 2.9067812052d0   !   Ti  
-            polarizability( 37 ) = 8.4d0            !   Rb  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 38 ) = 5.1d0            !   Sr  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 39 ) = 3.8d0            !   Y   src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 40 ) = 2.926d0          !   Zr  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 55 ) = 14.8d0           !   Cs  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 57 ) = 7.5d0            !   La  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 90 ) = 7.696d0          !   Th
+            polarizability(  3 ) = 0.0_dp            !   Li  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability(  4 ) = 0.0_dp            !   Be  src: Heaton et al., J. Phys. Chem. B 110, 11459 (2006)
+            polarizability(  8 ) = 10.74_dp          !   O 
+            polarizability(  9 ) = 7.885_dp          !   F   src: actual work on transmutations
+            polarizability( 11 ) = 1.028_dp          !   Na  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 19 ) = 5.0_dp            !   K   src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 20 ) = 3.1_dp            !   Ca  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 22 ) = 2.9067812052_dp   !   Ti  
+            polarizability( 37 ) = 8.4_dp            !   Rb  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 38 ) = 5.1_dp            !   Sr  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 39 ) = 3.8_dp            !   Y   src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 40 ) = 2.926_dp          !   Zr  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 55 ) = 14.8_dp           !   Cs  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 57 ) = 7.5_dp            !   La  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 90 ) = 7.696_dp          !   Th
         end subroutine
         
 end module
