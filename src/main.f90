@@ -1,5 +1,6 @@
 program pimaimPotentialGenerator
 
+    use iso_fortran_env, only: dp => real64
     use potentialParameters, only: initPotentialParameters => init
     use fumitosi, only: FT
     use polarizabilities, only: polarizability
@@ -21,6 +22,7 @@ program pimaimPotentialGenerator
     contains
     
         subroutine checkAllNeededPotentialsArePresent
+            use periodic_table, only: ptable
             integer :: i, j, li, lj
             do i= 1, nSpecies
                 if( .not. isPolarizable(i) ) cycle
@@ -28,8 +30,12 @@ program pimaimPotentialGenerator
                 do j= 1, nSpecies
                     if( j==i ) cycle
                     lj = listOfSpecies(j)
+                    if (FT (li,lj)%alpha == 0._dp) then
+                        print*,"STOP. Fumi Tosi potential is lacking for ", ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2)
+                        stop
+                    end if
                     if (dip(li,lj)%order == 0) then
-                        print*,"STOP. Potential info is lacking for ",li,lj
+                        print*,"STOP. dipolar dumping potential info is lacking for ", ptable(li)%symbol(1:2),ptable(lj)%symbol(1:2)
                         stop
                     end if
                 end do
