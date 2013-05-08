@@ -321,6 +321,8 @@ module fumitosi
             FT(Ti,Ti)%F6     = 1.400001255_dp
             FT(Ti,Ti)%F8     = 1.400001255_dp
 
+            call symetrizeInteractions
+
         end subroutine init
         
         subroutine zeroify
@@ -348,8 +350,10 @@ module fumitosi
         end subroutine
         
         subroutine reverse( array, i, j)
+            use periodic_table, only: ptable
             integer, intent(in) :: i, j
             real(dp), dimension(nelement,nelement), intent(inout) :: array
+            if (i == j) return
             if( array(i,j)==0.  .and. array(j,i)==0.  ) then
                 !do nothing
             else if ( array(i,j)==0._dp  .and. array(j,i)/=0._dp  ) then
@@ -358,7 +362,9 @@ module fumitosi
                 array(j,i) = array(i,j)
             else if ( array(i,j)/=0._dp  .and. array(j,i)/=0._dp  ) then
                 !do nothing
-                stop "STOP. strange non symetric Fumi Tosi potential, i.e. Fij /= Fji. Check module fumi tosi."
+                print*,'STOP. Non-symetric (thus incorrect) Fumi Tosi potential (Fij/=Fji) found for '&
+                                                            , ptable(i)%symbol(1:2), ptable(j)%symbol(1:2)
+                stop
             end if
         end subroutine
 

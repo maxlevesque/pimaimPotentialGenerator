@@ -26,7 +26,7 @@ module polarizabilities
             polarizability( 40 ) = 2.926_dp          !   Zr  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             polarizability( 55 ) = 14.8_dp           !   Cs  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             polarizability( 57 ) = 7.5_dp            !   La  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
-            polarizability( 90 ) = 7.696_dp          !   Th
+            polarizability( 90 ) = 7.696_dp          !   Th  src: 
         end subroutine
         
 end module
