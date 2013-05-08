@@ -73,7 +73,8 @@ program pimaimPotentialGenerator
                 li = listOfSpecies(i)
                 do j= i, nSpecies
                     lj = listOfSpecies(j)
-                    write(10,*) FT(li,lj)%alpha, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " alpha"
+                    write(10,*) FT(li,lj)%alpha, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " alpha. src: ",&
+                                                    trim(adjustl(FT(li,lj)%source))
                     write(10,*) FT(li,lj)%B,  ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " B"
                     write(10,*) FT(li,lj)%C6, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " C6"
                     write(10,*) FT(li,lj)%C8, ptable(li)%symbol(1:2), ptable(lj)%symbol(1:2), " C8"
