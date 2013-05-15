@@ -56,6 +56,14 @@ module fumitosi
             FT(Be,La)%F6     = 1.9_dp
             FT(Be,La)%F8     = 1.9_dp
 
+            FT(Be,Cs)%source = "Hypothesis by Levesque based on Be-Na, May 10 2013"
+            FT(Be,Cs)%alpha  = 5.0_dp
+            FT(Be,Cs)%B      = 1.0_dp
+            FT(Be,Cs)%C6     = 0.001_dp ! cf mail Mathieu 
+            FT(Be,Cs)%C8     = 0.001_dp ! cf mail Mathieu  
+            FT(Be,Cs)%F6     = 1.9_dp
+            FT(Be,Cs)%F8     = 1.9_dp
+
             FT(F,F)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
             FT(F,F)%alpha  = 2.444_dp
             FT(F,F)%B      = 282.3_dp
@@ -79,6 +87,7 @@ module fumitosi
             FT(F,Th)%C8    = 387._dp   
             FT(F,Th)%F6    = 1.900_dp  
             FT(F,Th)%F8    = 1.900_dp  
+
             
             FT(F,Li)%source = "unknown, used in Levesque et al., J. Chem. Phys. XXXXXXX TODO"
             FT(F,Li)%alpha = 1.974_dp 
@@ -87,6 +96,63 @@ module fumitosi
             FT(F,Li)%C8    = 88.15_dp 
             FT(F,Li)%F6    = 1.900_dp 
             FT(F,Li)%F8    = 1.900_dp 
+
+            FT(F,Na)%source = "actual work on transmutations"
+            FT(F,Na)%alpha = 1.974_dp 
+            FT(F,Na)%B     = 52.83_dp 
+            FT(F,Na)%C6    = 13.25_dp 
+            FT(F,Na)%C8    = 88.15_dp 
+            FT(F,Na)%F6    = 1.900_dp 
+            FT(F,Na)%F8    = 1.900_dp 
+
+            FT(F,K)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
+            FT(F,K)%alpha = 2.04_dp  
+            FT(F,K)%B     = 138.8_dp 
+            FT(F,K)%C6    = 3.9_dp   
+            FT(F,K)%C8    = 38.7_dp  
+            FT(F,K)%F6    = 1.9_dp 
+            FT(F,K)%F8    = 1.9_dp 
+
+            FT(F,Rb)%source = "Benes et al., paper about RbF-CsF in J. Chem. Phys. 130, 134716 (2009)"
+            FT(F,Rb)%alpha  = 1.961_dp
+            FT(F,Rb)%B      = 150.96_dp
+            FT(F,Rb)%C6     = 0.001_dp
+            FT(F,Rb)%C8     = 0.001_dp
+            FT(F,Rb)%F6     = 1.9_dp
+            FT(F,Rb)%F8     = 1.9_dp
+
+            FT(F,Cs)%source = "Benes et al., paper about RbF-CsF in J. Chem. Phys. 130, 134716 (2009)"
+            FT(F,Cs)%alpha  = 1.874_dp
+            FT(F,Cs)%B      = 151.12_dp
+            FT(F,Cs)%C6     = 10.95_dp
+            FT(F,Cs)%C8     = 109.5_dp
+            FT(F,Cs)%F6     = 1.9_dp
+            FT(F,Cs)%F8     = 1.9_dp
+            
+            FT(Rb,Rb)%source = "Benes et al., paper about RbF-CsF in J. Chem. Phys. 130, 134716 (2009)"
+            FT(Rb,Rb)%alpha  = 5.0_dp
+            FT(Rb,Rb)%B      = 1.0_dp
+            FT(Rb,Rb)%C6     = 0.001_dp
+            FT(Rb,Rb)%C8     = 0.001_dp
+            FT(Rb,Rb)%F6     = 1.9_dp
+            FT(Rb,Rb)%F8     = 1.9_dp
+
+            FT(Cs,Cs)%source = "Benes et al., paper about RbF-CsF in J. Chem. Phys. 130, 134716 (2009)"
+            FT(Cs,Cs)%alpha  = 3.0_dp
+            FT(Cs,Cs)%B      = 5000.0_dp
+            FT(Cs,Cs)%C6     = 8.0_dp
+            FT(Cs,Cs)%C8     = 80.0_dp
+            FT(Cs,Cs)%F6     = 1.9_dp
+            FT(Cs,Cs)%F8     = 1.9_dp
+
+            FT(Rb,Cs)%source = "Benes et al., paper about RbF-CsF in J. Chem. Phys. 130, 134716 (2009)"
+            FT(Rb,Cs)%alpha  = 3.0_dp
+            FT(Rb,Cs)%B      = 5000._dp
+            FT(Rb,Cs)%C6     = 0.001_dp
+            FT(Rb,Cs)%C8     = 0.001_dp
+            FT(Rb,Cs)%F6     = 1.9_dp
+            FT(Rb,Cs)%F8     = 1.9_dp
+
 !~             FT(F,Li)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
 !~             FT(F,Li)%alpha = 1.974_dp
 !~             FT(F,Li)%B     = 18.8_dp 
@@ -95,14 +161,7 @@ module fumitosi
 !~             FT(F,Li)%F6    = 1.900_dp
 !~             FT(F,Li)%F8    = 1.900_dp
             
-            FT(F,K)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
-            FT(F,K)%alpha = 2.04_dp  
-            FT(F,K)%B     = 138.8_dp 
-            FT(F,K)%C6    = 3.9_dp   
-            FT(F,K)%C8    = 38.7_dp  
-            FT(F,K)%F6    = 1.900_dp 
-            FT(F,K)%F8    = 1.900_dp 
-            
+           
             FT(F,Y)%source = ".NOT. Rollet et al., Journal of Fluorine Chemistry 134 (2012) 44-48"
             FT(F,Y)%alpha = 1.832_dp
             FT(F,Y)%B     = 87.40_dp
@@ -119,13 +178,6 @@ module fumitosi
             FT(F,La)%F6    = 1.900_dp
             FT(F,La)%F8    = 1.900_dp
             
-            FT(F,Na)%source = "actual work on transmutations"
-            FT(F,Na)%alpha = 1.974_dp 
-            FT(F,Na)%B     = 52.83_dp 
-            FT(F,Na)%C6    = 13.25_dp 
-            FT(F,Na)%C8    = 88.15_dp 
-            FT(F,Na)%F6    = 1.900_dp 
-            FT(F,Na)%F8    = 1.900_dp 
             
             FT(Zr,Zr)%source = "actual work on transmutations"
             FT(Zr,Zr)%alpha = 5.00_dp 
