@@ -56,6 +56,14 @@ module fumitosi
             FT(Be,La)%F6     = 1.9_dp
             FT(Be,La)%F8     = 1.9_dp
 
+            FT(La,La)%source = "Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)"
+            FT(La,La)%alpha  = 5.0_dp
+            FT(La,La)%B      = 1.0_dp
+            FT(La,La)%C6     = 0.001_dp ! cf mail Mathieu
+            FT(La,La)%C8     = 0.001_dp ! cf mail Mathieu
+            FT(La,La)%F6     = 1.9_dp
+            FT(La,La)%F8     = 1.9_dp
+
             FT(Be,Cs)%source = "Hypothesis by Levesque based on Be-Na, May 10 2013"
             FT(Be,Cs)%alpha  = 5.0_dp
             FT(Be,Cs)%B      = 1.0_dp
