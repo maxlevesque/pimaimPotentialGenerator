@@ -51,10 +51,7 @@ program pimaimPotentialGenerator
                 777 print*,"Enter atomic nb of species",i
                 read(*,*) listOfSpecies(i)
                 if( i>= 2) then
-                    if( any(listOfSpecies(1:i-1)==listOfSpecies(i)) ) then
-                        print*,"Species already entered. Enter another one."
-                        goto 777
-                    else if( i<=0 ) then
+                    if( i<=0 ) then
                         print*,"Invalid value. It should be strictly positive."
                         goto 777
                     end if
