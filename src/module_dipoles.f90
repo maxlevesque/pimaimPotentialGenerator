@@ -108,6 +108,41 @@ module dipoles
             dip(F,Li)%order  = 4_i2b
             dip(F,Li)%dampingc  = 1.335_dp 
 
+            dip(Cl,Li)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,Li)%dampingb = 1.72
+            dip(Cl,Li)%order = 4
+            dip(Cl,Li)%dampingc = 2
+            
+            dip(Cl,K)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,K)%dampingb = 1.46
+            dip(Cl,K)%order = 4
+            dip(Cl,K)%dampingc = 2.8
+
+            dip(Cl,Sc)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,Sc)%dampingb = 1.39
+            dip(Cl,Sc)%order = 4
+            dip(Cl,Sc)%dampingc = 1.0
+            
+            dip(Cl,Y)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,Y)%dampingb = 1.336
+            dip(Cl,Y)%order = 4
+            dip(Cl,Y)%dampingc = 1.0
+
+            dip(Cl,La)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,La)%dampingb = 1.258
+            dip(Cl,La)%order = 4
+            dip(Cl,La)%dampingc = 1.0
+
+            dip(Cl,Tb)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,Tb)%dampingb = 1.317
+            dip(Cl,Tb)%order = 4
+            dip(Cl,Tb)%dampingc = 1.0
+
+            dip(Cl,U)%source = "Salanne et al., J Phys. Chem. B 112, 1177 (2008)"
+            dip(Cl,U)%dampingb = 1.258
+            dip(Cl,U)%order = 4
+            dip(Cl,U)%dampingc = 1.0
+
             dip(F,K)%source = "Salanne et al., Phys. Chem. Chem. Phys., 2009, 11, 11501-11506"
             dip(F,K)%dampingb = 1.745_dp 
             dip(F,K)%order  = 4_i2b

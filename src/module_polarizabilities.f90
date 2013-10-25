@@ -17,6 +17,7 @@ module polarizabilities
             polarizability(  8 ) = 10.74_dp          !   O 
             polarizability(  9 ) = 7.885_dp          !   F   src: actual work on transmutations. 7.9 in Benes et al., J. Chem. Phys. 130, 134716 (2009)
             polarizability( 11 ) = 1.028_dp          !   Na  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
+            polarizability( 17 ) = 20.0_dp           !   Cl  src: Salanne et al., J Phys Chem B 112, 1177 (2008)
             polarizability( 19 ) = 5.0_dp            !   K   src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             polarizability( 20 ) = 3.1_dp            !   Ca  src: Salanne et al., Theor. Chem. Acc. 131, 1143 (2012)
             polarizability( 22 ) = 2.9067812052_dp   !   Ti  
